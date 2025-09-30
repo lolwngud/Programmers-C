@@ -53,3 +53,23 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# >>> custom: mac+vscode+build
+# VSCode 빌드 산출물 폴더
+build/
+
+# VSCode 워크스페이스(기본은 제외, 유용한 3개만 포함)
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+
+# macOS 잡파일
+.DS_Store
+._*
+
+# 로그/임시
+*.log
+*.tmp
+# <<< custom: mac+vscode+build
+Icon
