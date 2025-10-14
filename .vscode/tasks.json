@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build: active + main.c",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "OUT=\"${fileDirname}/app\"; SDK=\"$(xcrun --show-sdk-path)\"; ACTIVE=\"${file}\"; MAIN=\"${fileDirname}/main.c\"; if [ ! -f \"$MAIN\" ]; then echo \"[ERROR] main.c not found in ${fileDirname}\"; exit 1; fi; if [ \"$(basename \"$ACTIVE\")\" = \"main.c\" ]; then xcrun clang -std=c11 -Wall -Wextra -g -isysroot \"$SDK\" \"$MAIN\" -o \"$OUT\"; else xcrun clang -std=c11 -Wall -Wextra -g -isysroot \"$SDK\" \"$MAIN\" \"$ACTIVE\" -o \"$OUT\"; fi"
+      ],
+      "options": { "cwd": "${fileDirname}" },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

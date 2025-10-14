@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run: active + main.c",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}/app",
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "build: active + main.c",
+      "stopOnEntry": false,
+      "terminal": "integrated"
+    }
+  ]
+}
